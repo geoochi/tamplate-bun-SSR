@@ -4,6 +4,8 @@ import index from './src/index.html'
 let count = 0
 
 const server = serve({
+  development: process.env.NODE_ENV !== 'production',
+  port: 3005,
   routes: {
     // Serve index.html for all unmatched routes.
     '/*': index,
@@ -19,8 +21,6 @@ const server = serve({
       return Response.json({ count })
     },
   },
-
-  development: process.env.NODE_ENV !== 'production',
 })
 
 console.log(`🚀 Server running at ${server.url}`)

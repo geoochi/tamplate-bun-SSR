@@ -1,0 +1,9 @@
+#! /bin/sh
+
+PROCESS_ID=$(ps x | grep 'bun server.ts' | grep -v grep | awk '{print $1}')
+if [ -z "$PROCESS_ID" ];
+then
+    nohup bun server.ts > /dev/null 2>&1 &
+else
+    echo "Server is already running"
+fi
