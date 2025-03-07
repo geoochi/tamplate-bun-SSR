@@ -4,8 +4,9 @@
   "module": "src/index.tsx",
   "scripts": {
     "d": "bun --hot server.ts",
+    "s": "NODE_ENV=production bun server.ts",
     "b": "bun build.ts",
-    "p": "NODE_ENV=production bun server.ts"
+    "p": "bun x http-server dist -a 127.0.0.1 -p 3000"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
