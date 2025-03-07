@@ -1,31 +1,22 @@
 import { serve } from 'bun'
 import index from './src/index.html'
 
+let count = 0
+
 const server = serve({
   routes: {
     // Serve index.html for all unmatched routes.
     '/*': index,
 
-    '/api/hello': {
+    '/api/get-count': {
       async GET(req) {
-        return Response.json({
-          message: 'Hello, world!',
-          method: 'GET',
-        })
-      },
-      async PUT(req) {
-        return Response.json({
-          message: 'Hello, world!',
-          method: 'PUT',
-        })
+        return Response.json({ count })
       },
     },
 
-    '/api/hello/:name': async req => {
-      const name = req.params.name
-      return Response.json({
-        message: `Hello, ${name}!`,
-      })
+    '/api/count-plus': async req => {
+      count++
+      return Response.json({ count })
     },
   },
 
