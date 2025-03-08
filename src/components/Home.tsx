@@ -1,6 +1,6 @@
 import { MoonIcon, SunIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import useTheme from '@/hooks/useTheme'
+import useTheme from '@/hooks/use-theme'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 

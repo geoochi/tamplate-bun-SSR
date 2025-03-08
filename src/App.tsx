@@ -1,7 +1,7 @@
 import Home from './components/Home'
 import About from './components/About'
 import { HashRouter, Routes, Route } from 'react-router-dom'
-import useTheme from './hooks/useTheme'
+import useTheme from './hooks/use-theme'
 
 const App: React.FC = () => {
   useTheme()
